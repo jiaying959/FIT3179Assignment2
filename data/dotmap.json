@@ -1,15 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width":700,
+  "width": 800,
   "height": 500,
   "title": "Earthquake in the world larger than 5.5 in 2019",
   "layer": [
     {
       "data": {
-        "url": "https://jiaying959.github.io/FIT3179Assignment2/data/ne_110m_admin_0_countries.json",
+        "url": "https://jiaying959.github.io/FIT3179Assignment2/data/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
@@ -20,11 +19,15 @@
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"value": 8},
         "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "scale": {"scheme": "blues"}
+        },
+        "size": {
           "field": "mag",
           "type": "quantitative",
-          "scale": {"scheme": "blueorange"}
+          "scale": {"domain": [5.5,8]}
         }
       }
     }
