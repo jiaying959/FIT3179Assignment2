@@ -20,11 +20,7 @@
         "encoding": {
           "longitude": {"field": "longitude", "type": "quantitative"},
           "latitude": {"field": "latitude", "type": "quantitative"},
-          "size": {
-            "field": "mag",
-            "type": "quantitative",
-            "scale": {"domain": [4, 8]}
-          },
+          "size": {"value": 8},
           "color": {
             "field": "mag",
             "type": "quantitative",
