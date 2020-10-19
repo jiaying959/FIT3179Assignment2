@@ -34,3 +34,33 @@
   ],
   "config": {}
 }
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://jiaying959.github.io/FIT3179Assignment2/data/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+  },
+  "transform": [{
+    "lookup": "properties.NAME",
+    "from": {
+      "data": {
+        "url": "https://jiaying959.github.io/FIT3179Assignment2/data/2019.csv"
+      },
+      "key": "country"
+    }
+  }],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "mag",
+      "type": "quantitative"
+    }
+  }
+}
