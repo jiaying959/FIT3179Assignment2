@@ -1,35 +1,45 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "width": 500,
-    "height": 400,
-    "title": "Earthquakes in Australia for eahc month from 1980 to 2020",
-    "data": {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Earthquakes of Magnitude Larger than 4 in Australia  from 1982 to 2020",
+  "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
-    },
-    "params": [
+  },
+  "params": [
     {
-    "name": "year_above",
-    "value": 1980,
-    "bind": {
-    "input": "range",
-    "min": 1980,
-    "max": 2020,
-    "step": 1,
-    "name": "Year: "
+      "name": "month_selection",
+      "bind": {
+        "input": "select",
+       "options":[null,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+      "labels":["Show all","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+      "name":"Select month: "
+      }
+     
     }
+  ],
+  "transform": [{"filter": "month_selection == null || datum.montText == month_selection"},{
+      "aggregate": [{
+       "op": "count",
+       "field": "year",
+       "as": "year_count"
+      }],
+      "groupby": ["year"]
     }],
-   "transform": [
-       {"filter": "datum.year >= year_above"}],
-    "mark": {"type":"line","point":true},
-    "encoding": {
-       "x": {"field": "month", "type": "ordinal"},
-       "y": {
-         "aggregate": "count", "field": "month",
-         "title": "Number of earthquakes"
-       },
-       "tooltip": [
-       
-        {"aggregate": "count", "field": "month","title":"counts of earthquakes"}
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal","timeUnit":"year","title":"Year"},
+    "y": {
+      "field": "year_count",
+      "sort":"descending",
+      "title": "Number of earthquakes"
+    },
+    "tooltip": [
+      {"field": "year_count", "title": "Counts of earthquakes","format":","},{"field":"year","type": "ordinal","timeUnit":"year","title":"Year"}
     ]
-     }
-   }
+  },
+  "layer": [
+  {"mark": {"type": "line","point":true}
+  }
+
+  ]
+}
