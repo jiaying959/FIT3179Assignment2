@@ -2,7 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
   "height": 400,
-  "title": "Earthquakes of Magnitude Larger than 4 in Australia  from 1982 to 2020",
+  "title":{
+      "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Month From 1980 to 2020"],
+      "fontSize":18,
+      "baseline":"middle",
+      "lineHeight":30
+      
+  },
   "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
   },

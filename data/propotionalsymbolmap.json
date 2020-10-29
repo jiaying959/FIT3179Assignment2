@@ -2,7 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
   "height": 400,
-  "title": "Earthquakes of magnitude larger than 4 in Australia from 1980 to 2020",
+  "title":{
+      "text":["Earthquakes of Magnitude Larger Than 4 in Australia From 1980 to 2020"],
+      "fontSize":18,
+      "baseline":"middle",
+      "lineHeight":30
+      
+  },
   "layer": [
     {
       "data": {
@@ -19,21 +25,22 @@
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "tooltip": {"field": "mag", "type": "quantitative"},
+        "tooltip": [{"field":"year","type":"temporal","timeUnit":"year","title":"Year"},{"field":"states","type":"nominal","title":"State Name"},{"field": "mag", "type": "quantitative","title":"Magnitude","format":","},{"field":"depth","type":"quantitative","title":"Depth"}],
         "color": {
           "field": "mag",
           "type": "quantitative",
-          
+          "title":"Magnitude",
           "scale": {
             "type":"threshold",
-            "domain":[4,5,6],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+            "domain":[5,6],
+            "range": ["#fdbe85", "#e6550d", "#a63603"]
             }
         },
         "size": {
           "field": "depth",
           "type": "quantitative",
-          "scale": {"domain": [0, 40]}
+          "scale": {"domain": [0, 40]},
+          "title":"Depth"
         }
       }
     }

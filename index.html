@@ -1,17 +1,26 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://html5-templates.com/" />
     <title>Earthquakes in Australia</title>
     <meta name="description" content="Simplified Bootstrap template with sticky menu">
-    <link href="https://jiaying959.github.io/FIT3179Assignment2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://jiaying959.github.io/FIT3179Assignment2/css/sticky-menu.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="css/sticky-menu.css" rel="stylesheet">
     <style type="text/css">
     .no-js #page-top #welcome .container .row .col-lg-12 h1 {
 	font-family: Baskerville, Palatino Linotype, Palatino, Century Schoolbook L, Times New Roman, serif;
+}
+  body {
+	background-image: url(img/background1.png);
+}
+	
+
+    .no-js #page-top #welcome .container .row .col-lg-12 .display-3 strong {
+	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;
 }
     </style>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
@@ -22,7 +31,7 @@
  
 
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" tracingsrc="img/background.jpg" tracingopacity="34">
     
     
     <!-- Welcome   -->
@@ -30,45 +39,54 @@
         <div class="container">
             <div class="row">
               <div class="col-lg-12">
-                <h1><img src="https://jiaying959.github.io/FIT3179Assignment2/img/measure_icon.png" width="154" height="141" alt=""/></h1>
-                <h1>Earthquakes in Australia </h1>
-                  <p>Responsive one-page scrolling template with sticky menu on the top of the page. The active page gets highlighted as the user scrolls on the page or selects an option in the menu.</p>
+                <h1>&nbsp;</h1>
+                <h1 class="display-2"><strong>Earthquakes in Australia </strong></h1>
+                <p>Responsive one-page scrolling template with sticky menu on the top of the page. The active page gets highlighted as the user scrolls on the page or selects an option in the menu.</p>
 					<p>A back to top arrow fades in as the user starts scrolling down the page which takes back to the welcome screen with one click.</p>
 					<p></p>
-<a class="btn btn-primary page-scroll" href="#about">Discover More</a></div>
+<a class="btn btn-primary page-scroll" href="#magdepth">Discover More</a></div>
             </div>
         </div>
     </section>
 
     <!-- First section- -->
-    <section id="about" class="about-section">
-        <div id="vis1" class="container">
+    <section id="magdepth" class="magdepth-section">
+        <div  class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>About</h1>
+                <div class="col-lg-6">
+                    <h2>About</h2>
+					<a class="btn btn-primary page-scroll" href="#year">Discover More</a>
                 </div>
+                <div id="vis1" class="col-lg-6">&nbsp;</div>
             </div>
         </div>
     </section>
 
     <!-- What we do Section -->
-    <section id="whatwedo" class="whatwedo-section">
-        <div id="vis2" class="container">
+    <section id="year" class="year-section">
+        <div  class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>What We Do</h1>
+                <div id="vis2" class="col-lg-6">
+                   
                 </div>
+                <div class="col-lg-6">
+					<h2>What We Do</h2>
+					<a class="btn btn-primary page-scroll" href="#states">Discover More</a>
+				</div>
+				
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div id="vis3" class="container">
+    <section id="states" class="states-section">
+        <div  class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
+                <div class="col-lg-6">
+                    <h2>Contact Section</h2>
                 </div>
+                <div id = "vis3" class="col-lg-6">&nbsp;</div>
+                <div>&nbsp;</div>
             </div>
         </div>
     </section>
@@ -89,7 +107,7 @@
 
   var specVis2= "https://jiaying959.github.io/FIT3179Assignment2/data/line_chart.json";
 
-  var specVis3 ="https://jiaying959.github.io/FIT3179Assignment2/data/bar_chart.json"
+  var specVis3 ="https://jiaying959.github.io/FIT3179Assignment2/data/pie_chart.json"
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
