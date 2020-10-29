@@ -4,7 +4,7 @@
   "height": 320,
   "title":{
       "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Year From 1980 to 2020"],
-      "fontSize":14,
+      "fontSize":18,
       "baseline":"middle",
       "lineHeight":30
       
