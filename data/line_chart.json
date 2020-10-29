@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 350,
+  "height": 170,
   "title":{
-      "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Month From 1980 to 2020"],
+      "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Year From 1980 to 2020"],
       "fontSize":18,
       "baseline":"middle",
       "lineHeight":30
@@ -12,19 +12,7 @@
   "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
   },
-  "params": [
-    {
-      "name": "month_selection",
-      "bind": {
-        "input": "select",
-       "options":[null,"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-      "labels":["Show all","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-      "name":"Select month: "
-      }
-     
-    }
-  ],
-  "transform": [{"filter": "month_selection == null || datum.montText == month_selection"},{
+  "transform": [{
       "aggregate": [{
        "op": "count",
        "field": "year",

@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 170,
+    "title":{
+        "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Month From 1980 to 2020"],
+        "fontSize":18,
+        "baseline":"middle",
+        "lineHeight":30
+        
+    },
+    "data": {
+      "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
+    },
+    "transform": [{
+        "aggregate": [{
+         "op": "count",
+         "field": "month",
+         "as": "month_count"
+        }],
+        "groupby": ["month"]
+      }],
+    "encoding": {
+      "x": {"field": "month", "type": "ordinal","timeUnit":"month","title":"Month"},
+      "y": {
+        "field": "month_count",
+        "sort":"descending",
+        "title": "Number of earthquakes"
+      },
+      "tooltip": [
+        {"field": "month_count", "title": "Counts of earthquakes","format":","},{"field":"month","type": "ordinal","timeUnit":"month","title":"Month"}
+      ]
+    },
+    "layer": [
+    {"mark": {"type": "line","point":true}
+    }
+  
+    ]
+  }
