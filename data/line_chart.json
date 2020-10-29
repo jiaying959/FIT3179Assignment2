@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 130,
+  "height": 320,
   "title":{
       "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Year From 1980 to 2020"],
       "fontSize":14,
@@ -11,24 +11,31 @@
   },
   "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
-  },
-  "transform": [{
-      "aggregate": [{
-       "op": "count",
-       "field": "year",
-       "as": "year_count"
-      }],
-      "groupby": ["year"]
+  },"params": [
+    {
+      "name": "mag_selection",
+      "value":null,
+      "bind": {
+        "input": "range",
+      "min":4,
+      "max":7,
+      "step":0.5,
+      "name":"Select magnitude: "
+      }
+    }
+  ],
+  "transform": [{"filter":"datum.mag>=mag_selection"
     }],
   "encoding": {
     "x": {"field": "year", "type": "ordinal","timeUnit":"year","title":"Year"},
     "y": {
-      "field": "year_count",
-      "sort":"descending",
+      "aggregate":"count",
+      "field": "year",
+      "sort":"ascending",
       "title": "Number of earthquakes"
     },
     "tooltip": [
-      {"field": "year_count", "title": "Counts of earthquakes","format":","},{"field":"year","type": "ordinal","timeUnit":"year","title":"Year"}
+      {"aggregate":"count","field": "year", "title": "Counts of earthquakes","format":","},{"field":"year","type": "ordinal","timeUnit":"year","title":"Year"}
     ]
   },
   "layer": [
