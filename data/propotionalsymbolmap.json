@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 400,
+  "height": 350,
   "title":{
-      "text":["Earthquakes of Magnitude Larger Than 4 in Australia From 1980 to 2020"],
+      "text":["Earthquakes of Magnitude Larger Than 4","in Australia From 1980 to 2020"],
       "fontSize":18,
       "baseline":"middle",
       "lineHeight":30
