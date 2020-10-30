@@ -1,17 +1,16 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
-    "width":500,
-    "height":200,
-    "mark": "rect",
-    "encoding": {
-      "y": {"field": "states", "type": "ordinal","title":"State"},
-      "x": {"field": "year", "type": "temporal","timeUnit":"year","title":"Year"},
-      "color": {"aggregate": "count", "field": "states","title":"Count of earthquakes","scale":{"scheme":"oranges"}},
-      "tooltip":[{"field":"year","type":"temporal","timeUnit":"year","title":"Year"},{"aggregate":"count","field":"states","title":"Count of earthquake","format":","},{"field":"states","title":"State"}]
-    },
-    "config": {
-      "axis": {"grid": true, "tickBand": "extent"}
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
+  "width":300,
+  "height":150,
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "states", "type": "ordinal","title":"State"},
+    "x": {"field": "year", "type": "temporal","timeUnit":"year","title":"Year"},
+    "color": {"aggregate": "count", "field": "states","title":"Count of earthquakes","scale":{"scheme":"oranges"}},
+    "tooltip":[{"field":"year","type":"temporal","timeUnit":"year","title":"Year"},{"aggregate":"count","field":"states","title":"Count of earthquake","format":","},{"field":"states","title":"State"}]
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
   }
-  
+}
