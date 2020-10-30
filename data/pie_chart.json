@@ -1,36 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 90,
-  "title":{
-      "text":["Total number of Earthquakes of Magnitude Larger Than 4","in Australia From 1980 to 2020"],
-      "fontSize":14,
-      "baseline":"middle",
-      "lineHeight":20
-      
-  },
-  "data": {
-    "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
-  },
+  "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
+  "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
+  "width":400,
+  "height":150,
+  "title":"Total number of earthquakes for each state in Australia from 1980 to 2020",
   "encoding": {
-    "theta": {"aggregate":"count","field": "states", "type": "quantitative", "stack": true},
-    "color": {"field": "states", "type": "nominal", "legend": null,"scale":{"domain":["Western Australia","Queensland","New South Wales","Victoria","Northern Territory","South Australia"],"range": [
- "#e41a1c",
- "#984ea3",
- "#ff7f00",
- "#a6cee9",
- "#377eb8",
- "#a65628"
- ]}
-  },"tooltip":[{"aggregate":"count","field":"states","title":"Count of earthquake","format":","},{"field":"states","title":"State"}]
+    "y": {"field": "states", "type": "nominal","title":"State"},
+    "x": {"aggregate":"count","field": "states", "type": "quantitative","title":"Number of earthquakes"},
+    "color": {"value":"#FFAc33"}
   },
   "layer": [{
-    "mark": {"type": "arc", "outerRadius": 80}
+    "mark": "bar"
   }, {
-    "mark": {"type": "text", "radius": 120},
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
     "encoding": {
-      "text": {"field": "states", "type": "nominal"}
+      "text": {"aggregate":"count","field": "states", "type": "quantitative"}
     }
-  }],
-  "view": {"stroke": null}
+  }]
 }
