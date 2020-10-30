@@ -1,35 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 350,
+  "height": 90,
   "title":{
-      "text":["Earthquakes of Magnitude Larger Than 4","For Each State in Australia From 1980 to 2020"],
-      "fontSize":18,
+      "text":["Total number of Earthquakes of Magnitude Larger Than 4","in Australia From 1980 to 2020"],
+      "fontSize":14,
       "baseline":"middle",
-      "lineHeight":30
+      "lineHeight":20
       
   },
   "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
-  }, 
-  "params": [
-    {
-      "name": "year_selection",
-      "value":null,
-      "bind": {
-        "input": "range",
-      "min":1982,
-      "max":2020,
-      "step":1,
-      "name":"Select year: "
-      }
-  
-      
-     
-    }
-  ],
-  "transform": [{"filter": "year_selection == null || datum.year == year_selection"}],
-
+  },
   "encoding": {
     "theta": {"aggregate":"count","field": "states", "type": "quantitative", "stack": true},
     "color": {"field": "states", "type": "nominal", "legend": null,"scale":{"domain":["Western Australia","Queensland","New South Wales","Victoria","Northern Territory","South Australia"],"range": [
@@ -45,7 +27,7 @@
   "layer": [{
     "mark": {"type": "arc", "outerRadius": 80}
   }, {
-    "mark": {"type": "text", "radius": 125},
+    "mark": {"type": "text", "radius": 120},
     "encoding": {
       "text": {"field": "states", "type": "nominal"}
     }
