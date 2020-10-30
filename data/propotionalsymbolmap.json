@@ -4,9 +4,9 @@
   "height": 350,
   "title":{
       "text":["Earthquakes of Magnitude Larger Than 4","in Australia From 1980 to 2020"],
-      "fontSize":18,
+      "fontSize":16,
       "baseline":"middle",
-      "lineHeight":30
+      "lineHeight":20
       
   },
   "layer": [
@@ -33,7 +33,7 @@
           "scale": {
             "type":"threshold",
             "domain":[5,6],
-            "range": ["#fdbe85", "#e6550d", "#a63603"]
+            "range": ["#f8b58b","#f2855d","#de2d26"]
             }
         },
         "size": {

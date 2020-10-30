@@ -2,13 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "Bar chart with text labels. Apply scale padding to make the frame cover the labels.",
   "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
-  "width":400,
+  "width":430,
   "height":150,
-  "title":["Total number of earthquakes of magnitude larger than 4"," for each state in Australia from 1980 to 2020"],
+  "title":{"text":["Total number of earthquakes of magnitude larger than 4"," for each state in Australia from 1980 to 2020"],
+  "fontSize":16,
+  "lineHeight":20},
   "encoding": {
     "y": {"field": "states", "type": "nominal","title":"State"},
     "x": {"aggregate":"count","field": "states", "type": "quantitative","title":"Number of earthquakes"},
-    "color": {"value":"#FFAc33"}
+    "color": {"value":"#f2855d"}
   },
   "layer": [{
     "mark": "bar"

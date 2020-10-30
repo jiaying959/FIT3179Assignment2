@@ -4,10 +4,9 @@
   "height": 320,
   "title":{
       "text":["Earthquakes of Magnitude Larger Than 4 in Australia","For Each Year From 1980 to 2020"],
-      "fontSize":18,
+      "fontSize":16,
       "baseline":"middle",
-      "lineHeight":30
-      
+      "lineHeight":20
   },
   "data": {
     "url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"
@@ -34,6 +33,7 @@
       "sort":"ascending",
       "title": "Number of earthquakes"
     },
+    "color": {"value":"#f2855d"},
     "tooltip": [
       {"aggregate":"count","field": "year", "title": "Counts of earthquakes","format":","},{"field":"year","type": "ordinal","timeUnit":"year","title":"Year"}
     ]
