@@ -3,6 +3,7 @@
   "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
   "width":300,
   "height":150,
+  "title":"Total number of earthquakes for each state for each year in Australia from 1980 to 2020",
   "mark": "rect",
   "encoding": {
     "y": {"field": "states", "type": "ordinal","title":"State"},

@@ -4,7 +4,7 @@
   "data": {"url": "https://jiaying959.github.io/FIT3179Assignment2/data/aus.csv"},
   "width":400,
   "height":150,
-  "title":"Total number of earthquakes for each state in Australia from 1980 to 2020",
+  "title":"Total number of earthquakes of magnitude larger than 4 for each state in Australia from 1980 to 2020",
   "encoding": {
     "y": {"field": "states", "type": "nominal","title":"State"},
     "x": {"aggregate":"count","field": "states", "type": "quantitative","title":"Number of earthquakes"},
