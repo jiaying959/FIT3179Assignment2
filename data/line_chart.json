@@ -19,7 +19,7 @@
       "min":4,
       "max":7,
       "step":0.5,
-      "name":"Select magnitude: "
+      "name":"Magnitude Larger Than: "
       }
     }
   ],
